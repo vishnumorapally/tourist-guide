@@ -1,0 +1,150 @@
+.timeline{
+    position: relative;
+    max-width: 1200px;
+    /* margin: 100px auto; */
+
+}
+
+.container{
+    padding: 10px 50px;
+    position: relative;
+    width: 41%;
+    /* background-color: rgba(0, 0, 0, 0.3); */
+    animation: movedown 1s linear forwards;
+    opacity: 0;
+}
+@keyframes movedown {
+    0%{
+        opacity: 1;
+        transform: translateY(-30px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+.textbox{
+    padding: 20px 30px;
+    background-color: aliceblue;
+    color: black;
+    position: relative;
+    border-radius: 6px;
+    font-size: 15px ;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.left{
+    left: 50%;
+}
+.right{
+    right: 0%;
+}
+
+.container img{
+    position: absolute;
+    width: 40px;
+    z-index: 999;
+    border: 500px;
+    top:32px;
+    right: -20px;
+}
+
+.left img{
+    left: -20px;
+}
+
+.timeline::after{
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 100%;
+    background-color: aliceblue;
+    top: 0;
+    right: 50%;
+    z-index: -1;
+    animation: moveline 6s linear forwards;
+}
+
+@keyframes movelin {
+    0%{
+        height: 0;
+    }
+    100%{
+        height: 100%;
+    }
+}
+
+.textbox h2{
+    font-weight: 600;
+}
+
+.textbox small{
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.leftarrow{
+    position: absolute;
+    top: 28px;
+    z-index: 1;
+    color: white;
+    left: -15px;
+    
+}
+
+.rightarrow{
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 28px;
+    z-index: 1;
+    color: white;
+    right: 5px;
+}
+
+.drop{
+    cursor: pointer;
+}
+
+.droplist{
+    display: none;
+    font-size: 13px;
+    list-style: inside;
+
+}
+
+@media screen and (max-width:600px) {
+    .timeline{
+        margin: 50px auto;
+    }
+    .timeline::after{
+        left: 31px;
+    }
+    .container{
+        width: 100%;
+        padding-left: 80px;
+        padding-right: 25px;
+    }
+    .textbox{
+        font-size: 13px;
+    }
+    .textbox small{
+        margin-bottom: 10px;
+    }
+    .left{
+        left: 0;
+    }
+    .left img,.right img{
+        left: 10;
+    }
+    .leftarrow,.rightarrow{
+        left: -15px;
+    }
+    .rightarrow{
+        top: 60;
+        left: 9;
+        rotate: 180deg;
+    }
+}
